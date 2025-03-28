@@ -29,7 +29,7 @@ class Wish
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateCreated = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $dateUpdated = null;
 
     public function getId(): ?int
@@ -102,7 +102,7 @@ class Wish
         return $this->dateUpdated;
     }
 
-    public function setDateUpdated(\DateTimeInterface $dateUpdated): static
+    public function setDateUpdated(?\DateTimeInterface $dateUpdated): static
     {
         $this->dateUpdated = $dateUpdated;
 
